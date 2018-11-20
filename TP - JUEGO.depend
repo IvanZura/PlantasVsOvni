@@ -1,0 +1,183 @@
+# depslib dependency file v1.0
+1415818188 source:c:\users\z\documents\utn-segundo-cuatrimestre\laboratorio2\tp - juego\adn-x\clsaudio.cpp
+	"clsAudio.h"
+
+1415818188 c:\users\z\documents\utn-segundo-cuatrimestre\laboratorio2\tp - juego\adn-x\clsaudio.h
+	<iostream>
+	"adnConsts.h"
+	"clsError.h"
+
+1432327182 c:\users\z\documents\utn-segundo-cuatrimestre\laboratorio2\tp - juego\adn-x\adnconsts.h
+	<SDL/SDL.h>
+	<SDL/SDL_video.h>
+	<SDL/SDL_image.h>
+	<SDL/SDL_ttf.h>
+	<SDL/SDL_mixer.h>
+	<SDL.h>
+	<SDL_video.h>
+	"SDL_image.h"
+	"SDL_ttf.h"
+	"SDL_mixer.h"
+
+1415818188 c:\users\z\documents\utn-segundo-cuatrimestre\laboratorio2\tp - juego\adn-x\clserror.h
+
+1415818188 source:c:\users\z\documents\utn-segundo-cuatrimestre\laboratorio2\tp - juego\adn-x\clsdot.cpp
+	"clsDot.h"
+
+1415818188 c:\users\z\documents\utn-segundo-cuatrimestre\laboratorio2\tp - juego\adn-x\clsdot.h
+	"adnConsts.h"
+
+1432327228 source:c:\users\z\documents\utn-segundo-cuatrimestre\laboratorio2\tp - juego\adn-x\clserror.cpp
+	<cstring>
+	<iostream>
+	"clsError.h"
+
+1415818188 source:c:\users\z\documents\utn-segundo-cuatrimestre\laboratorio2\tp - juego\adn-x\clsevent.cpp
+	"clsEvent.h"
+
+1415818188 c:\users\z\documents\utn-segundo-cuatrimestre\laboratorio2\tp - juego\adn-x\clsevent.h
+	"adnConsts.h"
+
+1415818188 source:c:\users\z\documents\utn-segundo-cuatrimestre\laboratorio2\tp - juego\adn-x\clsimage.cpp
+	"clsImage.h"
+
+1415818188 c:\users\z\documents\utn-segundo-cuatrimestre\laboratorio2\tp - juego\adn-x\clsimage.h
+	"adnConsts.h"
+	"clsError.h"
+
+1415818188 source:c:\users\z\documents\utn-segundo-cuatrimestre\laboratorio2\tp - juego\adn-x\clslog.cpp
+	"clsLog.h"
+
+1415818188 c:\users\z\documents\utn-segundo-cuatrimestre\laboratorio2\tp - juego\adn-x\clslog.h
+	<cstdio>
+
+1415818188 source:c:\users\z\documents\utn-segundo-cuatrimestre\laboratorio2\tp - juego\adn-x\clsmode.cpp
+	"clsMode.h"
+
+1415818188 c:\users\z\documents\utn-segundo-cuatrimestre\laboratorio2\tp - juego\adn-x\clsmode.h
+	<iostream>
+	"adnConsts.h"
+	"clsError.h"
+
+1415818188 source:c:\users\z\documents\utn-segundo-cuatrimestre\laboratorio2\tp - juego\adn-x\clsmusic.cpp
+	"clsMusic.h"
+
+1415818188 c:\users\z\documents\utn-segundo-cuatrimestre\laboratorio2\tp - juego\adn-x\clsmusic.h
+	<iostream>
+	"adnConsts.h"
+	"clsError.h"
+
+1415818188 source:c:\users\z\documents\utn-segundo-cuatrimestre\laboratorio2\tp - juego\adn-x\clsrandom.cpp
+	"clsRandom.h"
+
+1415818188 c:\users\z\documents\utn-segundo-cuatrimestre\laboratorio2\tp - juego\adn-x\clsrandom.h
+	<ctime>
+	<cstdlib>
+	<iostream>
+
+1415818188 source:c:\users\z\documents\utn-segundo-cuatrimestre\laboratorio2\tp - juego\adn-x\clsscreen.cpp
+	"clsScreen.h"
+
+1415818188 c:\users\z\documents\utn-segundo-cuatrimestre\laboratorio2\tp - juego\adn-x\clsscreen.h
+	<iostream>
+	"adnConsts.h"
+	"clsError.h"
+
+1415818188 source:c:\users\z\documents\utn-segundo-cuatrimestre\laboratorio2\tp - juego\adn-x\clssoundeffect.cpp
+	"clsSoundEffect.h"
+
+1415818188 c:\users\z\documents\utn-segundo-cuatrimestre\laboratorio2\tp - juego\adn-x\clssoundeffect.h
+	<iostream>
+	"adnConsts.h"
+	"clsError.h"
+
+1415818188 source:c:\users\z\documents\utn-segundo-cuatrimestre\laboratorio2\tp - juego\adn-x\clssprite.cpp
+	"clsSprite.h"
+
+1415818188 c:\users\z\documents\utn-segundo-cuatrimestre\laboratorio2\tp - juego\adn-x\clssprite.h
+	<iostream>
+	<cstring>
+	"adnConsts.h"
+	"clsError.h"
+	"clsDot.h"
+	"clsImage.h"
+	"clsDot.h"
+	"clsScreen.h"
+
+1443039972 source:c:\users\z\documents\utn-segundo-cuatrimestre\laboratorio2\tp - juego\adn-x\clstext.cpp
+	"clsText.h"
+
+1415818188 c:\users\z\documents\utn-segundo-cuatrimestre\laboratorio2\tp - juego\adn-x\clstext.h
+	<iostream>
+	"adnConsts.h"
+	"clsError.h"
+
+1415818188 source:c:\users\z\documents\utn-segundo-cuatrimestre\laboratorio2\tp - juego\adn-x\clstimer.cpp
+	"clsTimer.h"
+
+1542672506 c:\users\z\documents\utn-segundo-cuatrimestre\laboratorio2\tp - juego\adn-x\clstimer.h
+	"clsEvent.h"
+
+1542673349 source:c:\users\z\documents\utn-segundo-cuatrimestre\laboratorio2\tp - juego\main.cpp
+	<iostream>
+	<adnConsts.h>
+	<clsLog.h>
+	<clsError.h>
+	<clsMotor.h>
+
+1542683433 c:\users\z\documents\utn-segundo-cuatrimestre\laboratorio2\tp - juego\include\clsmotor.h
+	<clsError.h>
+	<clsEvent.h>
+	<clsMode.h>
+	<clsScreen.h>
+	<adnConsts.h>
+	<clsDot.h>
+	<clsRandom.h>
+	<clsMenu.h>
+	<clsFondo.h>
+	<clsPlanta.h>
+	<clsOvni.h>
+	<clsTimer.h>
+	<clsDisparoPlanta.h>
+	<clsLog.h>
+
+1542684585 source:c:\users\z\documents\utn-segundo-cuatrimestre\laboratorio2\tp - juego\src\clsmotor.cpp
+	"clsMotor.h"
+
+1541112557 c:\users\z\documents\utn-segundo-cuatrimestre\laboratorio2\tp - juego\include\clsfondo.h
+	<clsSprite.h>
+	<clsScreen.h>
+
+1541112215 source:c:\users\z\documents\utn-segundo-cuatrimestre\laboratorio2\tp - juego\src\clsfondo.cpp
+	"clsFondo.h"
+
+1542664170 c:\users\z\documents\utn-segundo-cuatrimestre\laboratorio2\tp - juego\include\clsplanta.h
+	<clsSprite.h>
+	<clsRandom.h>
+	<clsTimer.h>
+	<clsDisparoPlanta.h>
+
+1542665931 source:c:\users\z\documents\utn-segundo-cuatrimestre\laboratorio2\tp - juego\src\clsplanta.cpp
+	"clsPlanta.h"
+
+1542684777 c:\users\z\documents\utn-segundo-cuatrimestre\laboratorio2\tp - juego\include\clsovni.h
+	<adnConsts.h>
+	<clsSprite.h>
+	<clsRandom.h>
+	<clsScreen.h>
+
+1542684757 source:c:\users\z\documents\utn-segundo-cuatrimestre\laboratorio2\tp - juego\src\clsovni.cpp
+	"clsOvni.h"
+
+1542679463 source:c:\users\z\documents\utn-segundo-cuatrimestre\laboratorio2\tp - juego\src\clsmenu.cpp
+	"clsMenu.h"
+
+1542657559 c:\users\z\documents\utn-segundo-cuatrimestre\laboratorio2\tp - juego\include\clsmenu.h
+	<clsSprite.h>
+
+1542685057 c:\users\z\documents\utn-segundo-cuatrimestre\laboratorio2\tp - juego\include\clsdisparoplanta.h
+	<clsSprite.h>
+
+1542685066 source:c:\users\z\documents\utn-segundo-cuatrimestre\laboratorio2\tp - juego\src\clsdisparoplanta.cpp
+	"clsDisparoPlanta.h"
+
