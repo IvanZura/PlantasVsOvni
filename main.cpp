@@ -93,10 +93,13 @@
 //
 ///////////////////////////////////////////////////////////////////////////////
 #include <iostream>         // Contiene "cout".
+#include <cstdlib>
+#include <cstdio>
 #include <adnConsts.h>      // Tipos de datos del sistema adn-X.
 #include <clsLog.h>         // stdout.txt para Linux.
 #include <clsError.h>       // Administrador de errores.
 #include <clsMotor.h>
+
 
 using namespace std;        // Espacio de nombres estandar.
 
@@ -134,16 +137,24 @@ int main ( int argc, char** argv )
 
   error.set(motor.init());
   if(error.get()) return error.get();
-  int menu = motor.menu();
+  bool salir = false;
 
-
-  if(menu == 1)
+  while(!salir)
   {
-    error.set(motor.run());
-    if(error.get()) return error.get();
-    error.set(motor.PerdistePapu());
-    if(error.get()) return error.get();
+      int menu = motor.menu();
+      if(menu == 1)
+      {
+        error.set(motor.run());
+        if(error.get()) return error.get();
+        error.set(motor.PerdistePapu());
+        if(error.get()) return error.get();
+      }
+      else
+      {
+        error.set(motor.mostrarPuntos());
+      }
   }
+
 
   //----------------------------
   // FIN DEL PROGRAMA PRINCIPAL

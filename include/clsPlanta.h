@@ -13,6 +13,7 @@ class clsPlanta : public clsSprite
         void inherit(){};
         int init(clsScreen *s);
         bool fueClick(int, int);
+        void setSalud(char*);
         char* getSalud();
         void disparo(clsScreen*);
         bool toco(clsSprite*);

@@ -16,6 +16,7 @@
 #include <clsLog.h>
 #include <clsText.h>
 #include <clsCajaNombre.h>
+#include <clsPuntos.h>
 
 class clsMotor
 {
@@ -35,6 +36,7 @@ class clsMotor
         int strLen(char*);
         int strToInt(char*);
         int PerdistePapu();
+        int mostrarPuntos();
 
     private:
         char nombre[30];
@@ -43,6 +45,7 @@ class clsMotor
         int cantPersonajes = 30;
         int dificultad = 3;
         int dificultadTiempo = 1000;
+        bool AST = true;
         clsRandom random;
 
         clsText SaludTexto[5];
@@ -63,6 +66,7 @@ class clsMotor
         clsTimer timer;
         clsLog log;
         clsCajaNombre caja;
+        clsPuntos puntos;
 
 };
 

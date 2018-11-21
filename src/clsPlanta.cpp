@@ -1,5 +1,9 @@
 #include "clsPlanta.h"
 
+void clsPlanta::setSalud(char* sal)
+{
+    strcpy(this->salud, sal);
+}
 int clsPlanta::strLen (char *palabra)
 
 {

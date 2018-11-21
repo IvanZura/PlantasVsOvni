@@ -54,6 +54,16 @@ int clsMotor::init()
 
     return error.get();
 }
+int clsMotor::mostrarPuntos()
+{
+    error.set(0);
+    menuF.setI(0);
+    menuF.paste(0, -80, screen.getPtr());
+    screen.refresh();
+    error.set(puntos.getPuntos(&screen, &NombreText[0], &NombreText[1]));
+    timer.waitForKey(KEY_ENTER);
+    return error.get();
+}
 int clsMotor::PerdistePapu()
 {
     error.set(0);
@@ -112,10 +122,30 @@ int clsMotor::PerdistePapu()
         }
         screen.refresh();
     }
+    error.set(puntos.setPuntos(this->nombre, this->puntaje));
     return error.get();
 }
 int clsMotor::run()
 {
+    this->dificultad = 3;
+    this->dificultadTiempo = 1000;
+    planta1.paste(250,50,screen.getPtr());
+    planta2.paste(250,150,screen.getPtr());
+    planta3.paste(250,250,screen.getPtr());
+    planta4.paste(250,350,screen.getPtr());
+    planta5.paste(250,450,screen.getPtr());
+    planta1.setSalud("100");
+    planta2.setSalud("100");
+    planta3.setSalud("100");
+    planta4.setSalud("100");
+    planta5.setSalud("100");
+    this->puntaje = 0;
+
+    for(int as = 0; as < cantPersonajes; as++){
+        this->ovni[as].setInitia(0, &screen);
+        this->disparoPlanta[as].setInitia(0, &screen);
+    }
+
     log.open();
     bool salir = false;
     timer.start();
@@ -139,13 +169,11 @@ int clsMotor::run()
        SaludTexto[t].setFontColor(BLUE);
        SaludTexto[t].setStyle(BOLD);
     }
-    bool AST = true;
+
     while(!salir)
     {
         fondo.paste(screen.getPtr());
         PuntajeTexto[0].write("PUNTAJE: ", 320, 550, screen.getPtr());
-        cout << this->puntaje << endl;
-        cout << this->bufferText << endl;
         itoa(this->puntaje, this->bufferText, 10);
 
         PuntajeTexto[0].write(this->bufferText, 500, 550, screen.getPtr());
@@ -230,10 +258,10 @@ int clsMotor::run()
             {
                if(disparoPlanta[i].toco(&ovni[w]))
                 {
-                    if(AST)
+                    if(this->AST)
                     {
-                        this->puntaje -= this->cantPersonajes;
-                        AST = false;
+                        //this->puntaje -= this->cantPersonajes*2;
+                        this->AST = false;
                     }
                     this->puntaje++;
                     ovni[w].setInitia(0, &screen);
@@ -386,6 +414,8 @@ int clsMotor::menu()
     menuF.setI(1);
     menuF.paste(300, 100, screen.getPtr());
     screen.refresh();
+
+    puntos.init();
     int opMenu = 0;
     bool salir = false;
     while(!salir)
@@ -398,6 +428,10 @@ int clsMotor::menu()
                 if(menuF.fueClick(event.getCursorX(), event.getCursorY()))
                 {
                     opMenu = 1;
+                    salir = true;
+                }
+                else{
+                    opMenu = 2;
                     salir = true;
                 }
             }
