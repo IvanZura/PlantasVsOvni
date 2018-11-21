@@ -54,23 +54,88 @@ int clsMotor::init()
 
     return error.get();
 }
+int clsMotor::PerdistePapu()
+{
+    error.set(0);
+    int salir = false;
+    for(int i = 0; i < 3; i++)
+    {
+        NombreText[i].init();
+        NombreText[i].loadFont("FONTS/Montserrat-Regular.ttf", 20);
+        NombreText[i].setFontColor(BLUE);
+        NombreText[i].setStyle(BOLD);
+    }
+    this->nombre[0] = '\0';
+    PerdisteText.init();
+    PerdisteText.loadFont("FONTS/Montserrat-Regular.ttf", 40);
+    PerdisteText.setFontColor(BLUE);
+    PerdisteText.setStyle(BOLD);
+    PerdisteText.centredWrite("Perdiste PAPU", 250, screen.getPtr());
+
+    screen.refresh();
+    int i=0;
+    while(!salir)
+    {
+        caja.init(&screen, 400, 310);
+        NombreText[0].write("Ingresa tu nombre", 410, 315, screen.getPtr());
+        NombreText[1].write("Y luego apreta ENTER", 410, 335, screen.getPtr());
+        if(event.wasEvent())
+        {
+            if(event.getEventType() == KEY_PRESSED)
+            {
+                int letra = (int) event.getKey();
+                if(letra == ' ' || (letra >= '0' && letra <= '9') || (letra >= 'a' && letra <= 'z'))
+                {
+                    if(event.getKeyMode() == KEY_MDF_CAPSLOCK && letra != ' ' && (letra < '0' || letra > '9'))
+                        letra -= 32;
+                    if(i < 18)
+                    {
+                        this->nombre[i] = letra;
+                        this->nombre[i+1] = '\0';
+                        i++;
+                    }
+                }
+                if(event.getKey() == KEY_BACKSPACE && i > 0)
+                {
+                    this->nombre[i-1] = '\0';
+                    i--;
+                }
+                if(event.getKey() == KEY_ENTER && i > 0)
+                {
+                    salir = true;
+                }
+            }
+        }
+        if(nombre[0] != '\0')
+        {
+            NombreText[2].write(this->nombre, 420, 365, screen.getPtr());
+        }
+        screen.refresh();
+    }
+    return error.get();
+}
 int clsMotor::run()
 {
     log.open();
     bool salir = false;
     timer.start();
+    PausaText.init();
+    PausaText.loadFont("FONTS/Montserrat-Regular.ttf", 50);
+    PausaText.setFontColor(BLUE);
+    PausaText.setStyle(BOLD);
+    PausaText.setBackColor(WHITE);
     for(int t = 0; t < 5; t++)
     {
        if(t < 2)
        {
            PuntajeTexto[t].init();
-           PuntajeTexto[t].loadFont("FONTS/FreeMono.ttf", 30);
+           PuntajeTexto[t].loadFont("FONTS/Montserrat-Regular.ttf", 30);
            PuntajeTexto[t].setFontColor(BLUE);
            PuntajeTexto[t].setStyle(BOLD);
            PuntajeTexto[t].setBackColor(WHITE);
        }
        SaludTexto[t].init();
-       SaludTexto[t].loadFont("FONTS/FreeMono.ttf", 30);
+       SaludTexto[t].loadFont("FONTS/Montserrat-Regular.ttf", 30);
        SaludTexto[t].setFontColor(BLUE);
        SaludTexto[t].setStyle(BOLD);
     }
@@ -89,7 +154,7 @@ int clsMotor::run()
         if(strcmp(planta3.getSalud(),"0")) {planta3.paste(250,250,screen.getPtr());SaludTexto[2].write(planta3.getSalud(), 270, 320, screen.getPtr());}
         if(strcmp(planta4.getSalud(),"0")) {planta4.paste(250,350,screen.getPtr());SaludTexto[3].write(planta4.getSalud(), 270, 420, screen.getPtr());}
         if(strcmp(planta5.getSalud(),"0")) {planta5.paste(250,450,screen.getPtr());SaludTexto[4].write(planta5.getSalud(), 270, 520, screen.getPtr());}
-
+        if(!strcmp(planta1.getSalud(),"0") && !strcmp(planta2.getSalud(),"0") && !strcmp(planta3.getSalud(),"0") && !strcmp(planta4.getSalud(),"0") && !strcmp(planta5.getSalud(),"0")) { salir = true;}
         // chequea cada instancia
         for(int i = 0; i < this->cantPersonajes; i++)
         {
@@ -140,17 +205,22 @@ int clsMotor::run()
                 if(ovni[i].getX() - this->dificultad <= 0)
                 {
                     ovni[i].setInitia(0, &screen);
+                    if(strcmp(planta1.getSalud(),"0")) {planta1.lastima(&screen);}
+                    if(strcmp(planta2.getSalud(),"0")) {planta2.lastima(&screen);}
+                    if(strcmp(planta3.getSalud(),"0")) {planta3.lastima(&screen);}
+                    if(strcmp(planta4.getSalud(),"0")) {planta4.lastima(&screen);}
+                    if(strcmp(planta5.getSalud(),"0")) {planta5.lastima(&screen);}
                 }
 
             }
             // Hace que se muevan los disparos inicializados
             if(disparoPlanta[i].getInitia() == 1)
             {
-                disparoPlanta[i].setX(disparoPlanta[i].getX() + 3);
+                disparoPlanta[i].setX(disparoPlanta[i].getX() + 6);
                 disparoPlanta[i].paste(screen.getPtr());
 
                 // Si el disparo se va a la mierda, se resetea
-                if(disparoPlanta[i].getX() + 3 >= 1024)
+                if(disparoPlanta[i].getX() + 6 >= 1024)
                 {
                     disparoPlanta[i].setInitia(0, &screen);
                 }
@@ -171,12 +241,12 @@ int clsMotor::run()
                     if(this->puntaje == 10)
                     {
                         this->dificultad = 5;
-                        this->dificultadTiempo = 750;
+                        this->dificultadTiempo = 850;
                     }
                     if(this->puntaje == 20)
                     {
                         this->dificultad = 7;
-                        this->dificultadTiempo = 500;
+                        this->dificultadTiempo = 600;
                     }
                     if(this->puntaje == 30)
                     {
@@ -186,6 +256,11 @@ int clsMotor::run()
                     if(this->puntaje == 40)
                     {
                         this->dificultad = 11;
+                        this->dificultadTiempo = 150;
+                    }
+                    if(this->puntaje == 50)
+                    {
+                        this->dificultad = 15;
                         this->dificultadTiempo = 150;
                     }
                 }
@@ -200,7 +275,11 @@ int clsMotor::run()
             {
                 if(event.getKey() == KEY_p)
                 {
-                    timer.wait(1000);
+                    PausaText.centredWrite("PAUSA", 250, screen.getPtr());
+                    screen.refresh();
+                    timer.waitForKey(KEY_p);
+                    PausaText.write("PAUSA", -512, -350, screen.getPtr());
+                    screen.refresh();
                 }
                 error.set(keyCommand(&salir, event.getKey(), &timer));
                 if(error.get()) return error.get();

@@ -15,6 +15,7 @@
 #include <clsDisparoPlanta.h>
 #include <clsLog.h>
 #include <clsText.h>
+#include <clsCajaNombre.h>
 
 class clsMotor
 {
@@ -33,16 +34,23 @@ class clsMotor
         int keyCommand(bool*, Uint16, clsTimer*);
         int strLen(char*);
         int strToInt(char*);
+        int PerdistePapu();
 
     private:
+        char nombre[30];
         char bufferText[7];
         int puntaje = 0;
         int cantPersonajes = 30;
         int dificultad = 3;
         int dificultadTiempo = 1000;
         clsRandom random;
+
         clsText SaludTexto[5];
         clsText PuntajeTexto[2];
+        clsText PerdisteText;
+        clsText PausaText;
+        clsText NombreText[3];
+
         clsMenu menuF;
         clsFondo fondo;
         clsDisparoPlanta disparoPlanta[30];
@@ -54,6 +62,7 @@ class clsMotor
         clsOvni ovni[30];
         clsTimer timer;
         clsLog log;
+        clsCajaNombre caja;
 
 };
 

@@ -127,7 +127,7 @@ int main ( int argc, char** argv )
   //-------------------------------------
   // OBJETOS NECESARIOS PARA EL PROGRAMA
   clsError error;   // Administrador de errores  (necesario).
-  clsMotor motor;
+  clsMotor motor;   // Juego total.
 
   //--------------------------------
   // CODIGO DEL PROGRAMA PRINCIPAL
@@ -140,6 +140,8 @@ int main ( int argc, char** argv )
   if(menu == 1)
   {
     error.set(motor.run());
+    if(error.get()) return error.get();
+    error.set(motor.PerdistePapu());
     if(error.get()) return error.get();
   }
 

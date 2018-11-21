@@ -118,14 +118,14 @@
 1542672506 c:\users\z\documents\utn-segundo-cuatrimestre\laboratorio2\tp - juego\adn-x\clstimer.h
 	"clsEvent.h"
 
-1542673349 source:c:\users\z\documents\utn-segundo-cuatrimestre\laboratorio2\tp - juego\main.cpp
+1542811938 source:c:\users\z\documents\utn-segundo-cuatrimestre\laboratorio2\tp - juego\main.cpp
 	<iostream>
 	<adnConsts.h>
 	<clsLog.h>
 	<clsError.h>
 	<clsMotor.h>
 
-1542770784 c:\users\z\documents\utn-segundo-cuatrimestre\laboratorio2\tp - juego\include\clsmotor.h
+1542815692 c:\users\z\documents\utn-segundo-cuatrimestre\laboratorio2\tp - juego\include\clsmotor.h
 	<clsError.h>
 	<clsEvent.h>
 	<clsMode.h>
@@ -141,8 +141,9 @@
 	<clsDisparoPlanta.h>
 	<clsLog.h>
 	<clsText.h>
+	<clsCajaNombre.h>
 
-1542770967 source:c:\users\z\documents\utn-segundo-cuatrimestre\laboratorio2\tp - juego\src\clsmotor.cpp
+1542815208 source:c:\users\z\documents\utn-segundo-cuatrimestre\laboratorio2\tp - juego\src\clsmotor.cpp
 	"clsMotor.h"
 
 1541112557 c:\users\z\documents\utn-segundo-cuatrimestre\laboratorio2\tp - juego\include\clsfondo.h
@@ -181,4 +182,10 @@
 
 1542685066 source:c:\users\z\documents\utn-segundo-cuatrimestre\laboratorio2\tp - juego\src\clsdisparoplanta.cpp
 	"clsDisparoPlanta.h"
+
+1542814920 c:\users\z\documents\utn-segundo-cuatrimestre\laboratorio2\tp - juego\include\clscajanombre.h
+	<clsSprite.h>
+
+1542815314 source:c:\users\z\documents\utn-segundo-cuatrimestre\laboratorio2\tp - juego\src\clscajanombre.cpp
+	"clsCajaNombre.h"
 
