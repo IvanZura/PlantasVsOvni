@@ -98,7 +98,7 @@ class clsText
     void setStyle(tFontStyle);           // Cambia el estilo de la fuente.
     void setTexture(tFontTexture);       // Cambia la textura de la fuente.
     int setFontFile(const char*);        // Cambia path y nombre de archivo ttf.
-    void write(const char*,int,          // Escribe un texto en una pantalla.
+    void write(char*,int,          // Escribe un texto en una pantalla.
                int,SDL_Surface*);
     void writeBlended(const char*, int,  // Escribe el texto blendeado en una
                       int, SDL_Surface*);// pantalla.

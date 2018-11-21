@@ -14,6 +14,7 @@
 #include <clsTimer.h>
 #include <clsDisparoPlanta.h>
 #include <clsLog.h>
+#include <clsText.h>
 
 class clsMotor
 {
@@ -29,22 +30,31 @@ class clsMotor
         int init();
         int menu();
         int run();
-        int keyCommand(bool*, Uint16);
+        int keyCommand(bool*, Uint16, clsTimer*);
+        int strLen(char*);
+        int strToInt(char*);
 
     private:
-        int cantPersonajes = 100;
+        char bufferText[7];
+        int puntaje = 0;
+        int cantPersonajes = 30;
+        int dificultad = 3;
+        int dificultadTiempo = 1000;
         clsRandom random;
+        clsText SaludTexto[5];
+        clsText PuntajeTexto[2];
         clsMenu menuF;
         clsFondo fondo;
-        clsDisparoPlanta disparoPlanta[100];
+        clsDisparoPlanta disparoPlanta[30];
         clsPlanta planta1;
         clsPlanta planta2;
         clsPlanta planta3;
         clsPlanta planta4;
         clsPlanta planta5;
-        clsOvni ovni[100];
+        clsOvni ovni[30];
         clsTimer timer;
         clsLog log;
+
 };
 
 #endif // CLSMOTOR_H

@@ -104,10 +104,10 @@
 	"clsDot.h"
 	"clsScreen.h"
 
-1443039972 source:c:\users\z\documents\utn-segundo-cuatrimestre\laboratorio2\tp - juego\adn-x\clstext.cpp
+1542759319 source:c:\users\z\documents\utn-segundo-cuatrimestre\laboratorio2\tp - juego\adn-x\clstext.cpp
 	"clsText.h"
 
-1415818188 c:\users\z\documents\utn-segundo-cuatrimestre\laboratorio2\tp - juego\adn-x\clstext.h
+1542759343 c:\users\z\documents\utn-segundo-cuatrimestre\laboratorio2\tp - juego\adn-x\clstext.h
 	<iostream>
 	"adnConsts.h"
 	"clsError.h"
@@ -125,7 +125,7 @@
 	<clsError.h>
 	<clsMotor.h>
 
-1542683433 c:\users\z\documents\utn-segundo-cuatrimestre\laboratorio2\tp - juego\include\clsmotor.h
+1542770784 c:\users\z\documents\utn-segundo-cuatrimestre\laboratorio2\tp - juego\include\clsmotor.h
 	<clsError.h>
 	<clsEvent.h>
 	<clsMode.h>
@@ -140,8 +140,9 @@
 	<clsTimer.h>
 	<clsDisparoPlanta.h>
 	<clsLog.h>
+	<clsText.h>
 
-1542684585 source:c:\users\z\documents\utn-segundo-cuatrimestre\laboratorio2\tp - juego\src\clsmotor.cpp
+1542770967 source:c:\users\z\documents\utn-segundo-cuatrimestre\laboratorio2\tp - juego\src\clsmotor.cpp
 	"clsMotor.h"
 
 1541112557 c:\users\z\documents\utn-segundo-cuatrimestre\laboratorio2\tp - juego\include\clsfondo.h
@@ -151,13 +152,13 @@
 1541112215 source:c:\users\z\documents\utn-segundo-cuatrimestre\laboratorio2\tp - juego\src\clsfondo.cpp
 	"clsFondo.h"
 
-1542664170 c:\users\z\documents\utn-segundo-cuatrimestre\laboratorio2\tp - juego\include\clsplanta.h
+1542762192 c:\users\z\documents\utn-segundo-cuatrimestre\laboratorio2\tp - juego\include\clsplanta.h
 	<clsSprite.h>
 	<clsRandom.h>
 	<clsTimer.h>
 	<clsDisparoPlanta.h>
 
-1542665931 source:c:\users\z\documents\utn-segundo-cuatrimestre\laboratorio2\tp - juego\src\clsplanta.cpp
+1542762330 source:c:\users\z\documents\utn-segundo-cuatrimestre\laboratorio2\tp - juego\src\clsplanta.cpp
 	"clsPlanta.h"
 
 1542684777 c:\users\z\documents\utn-segundo-cuatrimestre\laboratorio2\tp - juego\include\clsovni.h
@@ -166,7 +167,7 @@
 	<clsRandom.h>
 	<clsScreen.h>
 
-1542684757 source:c:\users\z\documents\utn-segundo-cuatrimestre\laboratorio2\tp - juego\src\clsovni.cpp
+1542767368 source:c:\users\z\documents\utn-segundo-cuatrimestre\laboratorio2\tp - juego\src\clsovni.cpp
 	"clsOvni.h"
 
 1542679463 source:c:\users\z\documents\utn-segundo-cuatrimestre\laboratorio2\tp - juego\src\clsmenu.cpp

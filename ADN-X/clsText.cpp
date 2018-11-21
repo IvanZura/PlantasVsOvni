@@ -277,7 +277,7 @@ void clsText::centredWrite(const char* text,int y,SDL_Surface* scr)
 //             SDL_Surface* scr   -> Pantalla destino.
 // DEVUELVE  : NADA.
 //-----------------------------------------------------------------------------
-void clsText::write(const char* text,int x,int y,SDL_Surface* scr)
+void clsText::write(char* text,int x,int y,SDL_Surface* scr)
 {
   SDL_Color fcolor;
   SDL_Color bcolor;
