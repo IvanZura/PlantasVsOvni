@@ -45,6 +45,8 @@ class clsMotor
 
 
     public:
+        void presentacion();
+        void despedida();
         int init();
         int menu();
         int run();
@@ -84,6 +86,7 @@ class clsMotor
         clsCajaNombre caja;
         clsPunto puntos;
         clsPuntos TodosPuntos;
+        clsText otroText;
 
 };
 

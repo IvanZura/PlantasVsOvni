@@ -138,7 +138,7 @@ int main ( int argc, char** argv )
   error.set(motor.init());
   if(error.get()) return error.get();
   bool salir = false;
-
+  motor.presentacion();
   while(!salir)
   {
       int menu = motor.menu();
@@ -159,7 +159,7 @@ int main ( int argc, char** argv )
       }
   }
 
-
+  motor.despedida();
   //----------------------------
   // FIN DEL PROGRAMA PRINCIPAL
   cout << endl;

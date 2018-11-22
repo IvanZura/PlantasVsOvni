@@ -550,3 +550,35 @@ int clsMotor::menu()
     }
     return opMenu;
 }
+//=============================================================================
+// METODO    : void presentacion()
+// ACCION    : Presentacion
+// PARAMETROS: ninguno.
+// DEVUELVE  : nada.
+//-----------------------------------------------------------------------------
+void clsMotor::presentacion()
+{
+    screen.clean(BLACK);
+    otroText.init();
+    otroText.loadFont("FONTS/snap.TTF", 50);
+    otroText.setFontColor(WHITE);
+    otroText.centredWrite("Bienvenidos muahahaha", 250, screen.getPtr());
+    screen.refresh();
+    timer.wait(5000);
+}
+//=============================================================================
+// METODO    : void despedida()
+// ACCION    : Presentacion
+// PARAMETROS: ninguno.
+// DEVUELVE  : nada.
+//-----------------------------------------------------------------------------
+void clsMotor::despedida()
+{
+    screen.clean(BLACK);
+    otroText.init();
+    otroText.loadFont("FONTS/snap.TTF", 50);
+    otroText.setFontColor(WHITE);
+    otroText.centredWrite("adios muahahaha", 250, screen.getPtr());
+    screen.refresh();
+    timer.wait(5000);
+}

@@ -118,7 +118,7 @@
 1542672506 c:\users\z\documents\utn-segundo-cuatrimestre\laboratorio2\tp - juego\adn-x\clstimer.h
 	"clsEvent.h"
 
-1542914683 source:c:\users\z\documents\utn-segundo-cuatrimestre\laboratorio2\tp - juego\main.cpp
+1542918428 source:c:\users\z\documents\utn-segundo-cuatrimestre\laboratorio2\tp - juego\main.cpp
 	<iostream>
 	<cstdlib>
 	<cstdio>
@@ -127,7 +127,7 @@
 	<clsError.h>
 	<clsMotor.h>
 
-1542914916 c:\users\z\documents\utn-segundo-cuatrimestre\laboratorio2\tp - juego\include\clsmotor.h
+1542918449 c:\users\z\documents\utn-segundo-cuatrimestre\laboratorio2\tp - juego\include\clsmotor.h
 	<clsError.h>
 	<clsEvent.h>
 	<clsMode.h>
