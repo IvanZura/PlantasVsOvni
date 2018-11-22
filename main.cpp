@@ -149,9 +149,13 @@ int main ( int argc, char** argv )
         error.set(motor.PerdistePapu());
         if(error.get()) return error.get();
       }
-      else
+      if(menu == 2)
       {
         error.set(motor.mostrarPuntos());
+      }
+      if(menu == 3)
+      {
+        salir = true;
       }
   }
 

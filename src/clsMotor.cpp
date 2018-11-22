@@ -35,8 +35,7 @@ int clsMotor::init()
                           ));
     if(error.get()) return error.get();
 
-    error.set(menuF.init(&screen));
-    if(error.get()) return error.get();
+
 
     error.set(fondo.init(&screen));
     if(error.get()) return error.get();
@@ -57,10 +56,9 @@ int clsMotor::init()
 int clsMotor::mostrarPuntos()
 {
     error.set(0);
-    menuF.setI(0);
-    menuF.paste(0, -80, screen.getPtr());
+    menuF[0].paste(0, -80, screen.getPtr());
     screen.refresh();
-    error.set(puntos.getPuntos(&screen, &NombreText[0], &NombreText[1]));
+    TodosPuntos.mostrarPuntos(&screen);
     timer.waitForKey(KEY_ENTER);
     return error.get();
 }
@@ -71,15 +69,15 @@ int clsMotor::PerdistePapu()
     for(int i = 0; i < 3; i++)
     {
         NombreText[i].init();
-        NombreText[i].loadFont("FONTS/Montserrat-Regular.ttf", 20);
-        NombreText[i].setFontColor(BLUE);
-        NombreText[i].setStyle(BOLD);
+        NombreText[i].loadFont("FONTS/snap.TTF", 20);
+        NombreText[i].setFontColor(BLACK);
+        //NombreText[i].setStyle(BOLD);
     }
     this->nombre[0] = '\0';
     PerdisteText.init();
-    PerdisteText.loadFont("FONTS/Montserrat-Regular.ttf", 40);
-    PerdisteText.setFontColor(BLUE);
-    PerdisteText.setStyle(BOLD);
+    PerdisteText.loadFont("FONTS/snap.TTF", 40);
+    PerdisteText.setFontColor(BLACK);
+    //PerdisteText.setStyle(BOLD);
     PerdisteText.centredWrite("Perdiste PAPU", 250, screen.getPtr());
 
     screen.refresh();
@@ -122,7 +120,10 @@ int clsMotor::PerdistePapu()
         }
         screen.refresh();
     }
-    error.set(puntos.setPuntos(this->nombre, this->puntaje));
+    puntos.setPuntos(this->puntaje);
+    puntos.setNombre(this->nombre);
+    puntos.Guardar();
+    //error.set(puntos.setPuntos(this->nombre, this->puntaje));
     return error.get();
 }
 int clsMotor::run()
@@ -139,6 +140,12 @@ int clsMotor::run()
     planta3.setSalud("100");
     planta4.setSalud("100");
     planta5.setSalud("100");
+    planta1.setChoqueCero();
+    planta2.setChoqueCero();
+    planta3.setChoqueCero();
+    planta4.setChoqueCero();
+    planta5.setChoqueCero();
+
     this->puntaje = 0;
 
     for(int as = 0; as < cantPersonajes; as++){
@@ -150,24 +157,24 @@ int clsMotor::run()
     bool salir = false;
     timer.start();
     PausaText.init();
-    PausaText.loadFont("FONTS/Montserrat-Regular.ttf", 50);
-    PausaText.setFontColor(BLUE);
-    PausaText.setStyle(BOLD);
+    PausaText.loadFont("FONTS/snap.TTF", 50);
+    PausaText.setFontColor(BLACK);
+    //PausaText.setStyle(BOLD);
     PausaText.setBackColor(WHITE);
     for(int t = 0; t < 5; t++)
     {
        if(t < 2)
        {
            PuntajeTexto[t].init();
-           PuntajeTexto[t].loadFont("FONTS/Montserrat-Regular.ttf", 30);
-           PuntajeTexto[t].setFontColor(BLUE);
-           PuntajeTexto[t].setStyle(BOLD);
+           PuntajeTexto[t].loadFont("FONTS/snap.TTF", 30);
+           PuntajeTexto[t].setFontColor(BLACK);
+           //PuntajeTexto[t].setStyle(BOLD);
            PuntajeTexto[t].setBackColor(WHITE);
        }
        SaludTexto[t].init();
-       SaludTexto[t].loadFont("FONTS/Montserrat-Regular.ttf", 30);
-       SaludTexto[t].setFontColor(BLUE);
-       SaludTexto[t].setStyle(BOLD);
+       SaludTexto[t].loadFont("FONTS/snap.TTF", 30);
+       SaludTexto[t].setFontColor(BLACK);
+       //SaludTexto[t].setStyle(BOLD);
     }
 
     while(!salir)
@@ -176,7 +183,7 @@ int clsMotor::run()
         PuntajeTexto[0].write("PUNTAJE: ", 320, 550, screen.getPtr());
         itoa(this->puntaje, this->bufferText, 10);
 
-        PuntajeTexto[0].write(this->bufferText, 500, 550, screen.getPtr());
+        PuntajeTexto[1].write(this->bufferText, 550, 550, screen.getPtr());
         if(strcmp(planta1.getSalud(),"0")) {planta1.paste(250,50,screen.getPtr());SaludTexto[0].write(planta1.getSalud(), 270, 120, screen.getPtr());}
         if(strcmp(planta2.getSalud(),"0")) {planta2.paste(250,150,screen.getPtr());SaludTexto[1].write(planta2.getSalud(), 270, 220, screen.getPtr());}
         if(strcmp(planta3.getSalud(),"0")) {planta3.paste(250,250,screen.getPtr());SaludTexto[2].write(planta3.getSalud(), 270, 320, screen.getPtr());}
@@ -409,13 +416,17 @@ int clsMotor::keyCommand(bool*salir, Uint16 key, clsTimer *timer)
 }
 int clsMotor::menu()
 {
-    menuF.setI(0);
-    menuF.paste(0, -80, screen.getPtr());
-    menuF.setI(1);
-    menuF.paste(300, 100, screen.getPtr());
+    for(int m = 0; m < 4; m++)
+    {
+        menuF[m].init(&screen);
+        if(m==0){menuF[0].load("images/menu2.png");menuF[0].paste(0, -80, screen.getPtr());}
+        if(m==1){menuF[1].load("images/btnIniciar2.png");menuF[1].paste(300, 150, screen.getPtr());}
+        if(m==2){menuF[2].load("images/btnPuntajes.png");menuF[2].paste(300, 300, screen.getPtr());}
+        if(m==3){menuF[3].load("images/btnSalir.png");menuF[3].paste(300, 450, screen.getPtr());}
+    }
     screen.refresh();
 
-    puntos.init();
+    TodosPuntos.init();
     int opMenu = 0;
     bool salir = false;
     while(!salir)
@@ -424,15 +435,26 @@ int clsMotor::menu()
         {
             if(event.getEventType() == MOUSE_DOWN)
             {
-                menuF.setI(1);
-                if(menuF.fueClick(event.getCursorX(), event.getCursorY()))
+                if(menuF[1].fueClick(event.getCursorX(), event.getCursorY()))
                 {
                     opMenu = 1;
                     salir = true;
                 }
-                else{
-                    opMenu = 2;
-                    salir = true;
+                else
+                {
+                    if(menuF[2].fueClick(event.getCursorX(), event.getCursorY()))
+                    {
+                        opMenu = 2;
+                        salir = true;
+                    }
+                    else
+                    {
+                        if(menuF[3].fueClick(event.getCursorX(), event.getCursorY()))
+                        {
+                            opMenu = 3;
+                            salir = true;
+                        }
+                    }
                 }
             }
         }

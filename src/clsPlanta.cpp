@@ -61,6 +61,10 @@ bool clsPlanta::toco(clsSprite *spr)
 {
     return this->getContact(spr);
 }
+void clsPlanta::setChoqueCero()
+{
+    this->choque = 0;
+}
 void clsPlanta::lastima(clsScreen *s)
 {
     if(this->choque == 0)

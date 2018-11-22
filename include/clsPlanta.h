@@ -20,6 +20,7 @@ class clsPlanta : public clsSprite
         void lastima(clsScreen*);
         int strLen(char*);
         int strToInt(char*);
+        void setChoqueCero();
     protected:
 
     private:

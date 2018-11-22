@@ -17,6 +17,7 @@
 #include <clsText.h>
 #include <clsCajaNombre.h>
 #include <clsPuntos.h>
+#include <clsPunto.h>
 
 class clsMotor
 {
@@ -54,7 +55,7 @@ class clsMotor
         clsText PausaText;
         clsText NombreText[3];
 
-        clsMenu menuF;
+        clsMenu menuF[4];
         clsFondo fondo;
         clsDisparoPlanta disparoPlanta[30];
         clsPlanta planta1;
@@ -66,7 +67,8 @@ class clsMotor
         clsTimer timer;
         clsLog log;
         clsCajaNombre caja;
-        clsPuntos puntos;
+        clsPunto puntos;
+        clsPuntos TodosPuntos;
 
 };
 
