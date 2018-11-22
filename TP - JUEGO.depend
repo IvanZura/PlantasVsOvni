@@ -118,7 +118,7 @@
 1542672506 c:\users\z\documents\utn-segundo-cuatrimestre\laboratorio2\tp - juego\adn-x\clstimer.h
 	"clsEvent.h"
 
-1542853862 source:c:\users\z\documents\utn-segundo-cuatrimestre\laboratorio2\tp - juego\main.cpp
+1542914683 source:c:\users\z\documents\utn-segundo-cuatrimestre\laboratorio2\tp - juego\main.cpp
 	<iostream>
 	<cstdlib>
 	<cstdio>
@@ -127,7 +127,7 @@
 	<clsError.h>
 	<clsMotor.h>
 
-1542912537 c:\users\z\documents\utn-segundo-cuatrimestre\laboratorio2\tp - juego\include\clsmotor.h
+1542914916 c:\users\z\documents\utn-segundo-cuatrimestre\laboratorio2\tp - juego\include\clsmotor.h
 	<clsError.h>
 	<clsEvent.h>
 	<clsMode.h>
@@ -147,53 +147,53 @@
 	<clsPuntos.h>
 	<clsPunto.h>
 
-1542913388 source:c:\users\z\documents\utn-segundo-cuatrimestre\laboratorio2\tp - juego\src\clsmotor.cpp
+1542917529 source:c:\users\z\documents\utn-segundo-cuatrimestre\laboratorio2\tp - juego\src\clsmotor.cpp
 	"clsMotor.h"
 
-1541112557 c:\users\z\documents\utn-segundo-cuatrimestre\laboratorio2\tp - juego\include\clsfondo.h
+1542914710 c:\users\z\documents\utn-segundo-cuatrimestre\laboratorio2\tp - juego\include\clsfondo.h
 	<clsSprite.h>
 	<clsScreen.h>
 
-1541112215 source:c:\users\z\documents\utn-segundo-cuatrimestre\laboratorio2\tp - juego\src\clsfondo.cpp
+1542916537 source:c:\users\z\documents\utn-segundo-cuatrimestre\laboratorio2\tp - juego\src\clsfondo.cpp
 	"clsFondo.h"
 
-1542904239 c:\users\z\documents\utn-segundo-cuatrimestre\laboratorio2\tp - juego\include\clsplanta.h
+1542914990 c:\users\z\documents\utn-segundo-cuatrimestre\laboratorio2\tp - juego\include\clsplanta.h
 	<clsSprite.h>
 	<clsRandom.h>
 	<clsTimer.h>
 	<clsDisparoPlanta.h>
 
-1542904225 source:c:\users\z\documents\utn-segundo-cuatrimestre\laboratorio2\tp - juego\src\clsplanta.cpp
+1542915882 source:c:\users\z\documents\utn-segundo-cuatrimestre\laboratorio2\tp - juego\src\clsplanta.cpp
 	"clsPlanta.h"
 
-1542684777 c:\users\z\documents\utn-segundo-cuatrimestre\laboratorio2\tp - juego\include\clsovni.h
+1542914963 c:\users\z\documents\utn-segundo-cuatrimestre\laboratorio2\tp - juego\include\clsovni.h
 	<adnConsts.h>
 	<clsSprite.h>
 	<clsRandom.h>
 	<clsScreen.h>
 
-1542767368 source:c:\users\z\documents\utn-segundo-cuatrimestre\laboratorio2\tp - juego\src\clsovni.cpp
+1542916164 source:c:\users\z\documents\utn-segundo-cuatrimestre\laboratorio2\tp - juego\src\clsovni.cpp
 	"clsOvni.h"
 
-1542855906 source:c:\users\z\documents\utn-segundo-cuatrimestre\laboratorio2\tp - juego\src\clsmenu.cpp
+1542916497 source:c:\users\z\documents\utn-segundo-cuatrimestre\laboratorio2\tp - juego\src\clsmenu.cpp
 	"clsMenu.h"
 
-1542657559 c:\users\z\documents\utn-segundo-cuatrimestre\laboratorio2\tp - juego\include\clsmenu.h
+1542914874 c:\users\z\documents\utn-segundo-cuatrimestre\laboratorio2\tp - juego\include\clsmenu.h
 	<clsSprite.h>
 
-1542685057 c:\users\z\documents\utn-segundo-cuatrimestre\laboratorio2\tp - juego\include\clsdisparoplanta.h
+1542914567 c:\users\z\documents\utn-segundo-cuatrimestre\laboratorio2\tp - juego\include\clsdisparoplanta.h
 	<clsSprite.h>
 
-1542685066 source:c:\users\z\documents\utn-segundo-cuatrimestre\laboratorio2\tp - juego\src\clsdisparoplanta.cpp
+1542916829 source:c:\users\z\documents\utn-segundo-cuatrimestre\laboratorio2\tp - juego\src\clsdisparoplanta.cpp
 	"clsDisparoPlanta.h"
 
-1542814920 c:\users\z\documents\utn-segundo-cuatrimestre\laboratorio2\tp - juego\include\clscajanombre.h
+1542914524 c:\users\z\documents\utn-segundo-cuatrimestre\laboratorio2\tp - juego\include\clscajanombre.h
 	<clsSprite.h>
 
-1542815314 source:c:\users\z\documents\utn-segundo-cuatrimestre\laboratorio2\tp - juego\src\clscajanombre.cpp
+1542916868 source:c:\users\z\documents\utn-segundo-cuatrimestre\laboratorio2\tp - juego\src\clscajanombre.cpp
 	"clsCajaNombre.h"
 
-1542913835 c:\users\z\documents\utn-segundo-cuatrimestre\laboratorio2\tp - juego\include\clspuntos.h
+1542915096 c:\users\z\documents\utn-segundo-cuatrimestre\laboratorio2\tp - juego\include\clspuntos.h
 	<cstdio>
 	<cstring>
 	<clsScreen.h>
@@ -201,13 +201,13 @@
 	<clsError.h>
 	<clsPunto.h>
 
-1542913618 source:c:\users\z\documents\utn-segundo-cuatrimestre\laboratorio2\tp - juego\src\clspuntos.cpp
+1542915319 source:c:\users\z\documents\utn-segundo-cuatrimestre\laboratorio2\tp - juego\src\clspuntos.cpp
 	"clsPuntos.h"
 
-1542913039 source:c:\users\z\documents\utn-segundo-cuatrimestre\laboratorio2\tp - juego\src\clspunto.cpp
+1542915503 source:c:\users\z\documents\utn-segundo-cuatrimestre\laboratorio2\tp - juego\src\clspunto.cpp
 	"clsPunto.h"
 
-1542913109 c:\users\z\documents\utn-segundo-cuatrimestre\laboratorio2\tp - juego\include\clspunto.h
+1542915053 c:\users\z\documents\utn-segundo-cuatrimestre\laboratorio2\tp - juego\include\clspunto.h
 	<cstring>
 	<cstdio>
 

@@ -1,3 +1,18 @@
+//#############################################################################
+// ARCHIVO             : clsPuntos.cpp
+// AUTOR               : Ivan Alejandro Zura.
+// VERSION             : v. 14.11 estable.
+// FECHA DE CREACION   : 1/11/2018.
+// ULTIMA ACTUALIZACION: 22/11/2018.          .
+// LICENCIA            : GPL (General Public License) - Version 3.
+//=============================================================================
+// SISTEMA OPERATIVO   : Linux / Windows.
+// IDE                 : Code::Blocks.
+// COMPILADOR          : GNU GCC Compiler (Linux) / MinGW (Windows).
+//=============================================================================
+// DESCRIPCION: Esta clase maneja los puntos al momento de jugar.
+//
+///////////////////////////////////////////////////////////////////////////////
 #include "clsPuntos.h"
 clsError error;
 clsText titulo;
@@ -5,6 +20,12 @@ clsText presioneEnter;
 clsText puntajes[14];
 const char F_PUNTOS[90] = "./archivos/puntos.dat";
 
+//=============================================================================
+// METODO    : void init()
+// ACCION    : Inicializa el archivo de los puntos.
+// PARAMETROS: ninguno.
+// DEVUELVE  : nada.
+//-----------------------------------------------------------------------------
 void clsPuntos::init()
 {
     FILE *filePuntos;
@@ -34,6 +55,12 @@ void clsPuntos::init()
         //this->puntajes[i].setStyle(BOLD);
     }
 }
+//=============================================================================
+// METODO    : int TotalPuntos()
+// ACCION    : Cuenta la cantidad de registros que hay en el archivo de puntos.
+// PARAMETROS: ninguno.
+// DEVUELVE  : int - cantidad de puntos.
+//-----------------------------------------------------------------------------
 int clsPuntos::TotalPuntos()
 {
     int total;
@@ -51,6 +78,12 @@ int clsPuntos::TotalPuntos()
     fclose(archivo);
     return total;
 }
+//=============================================================================
+// METODO    : int Sort()
+// ACCION    : Agarra todos los registros del archivo y los ordena.
+// PARAMETROS: ninguno.
+// DEVUELVE  : nada.
+//-----------------------------------------------------------------------------
 int clsPuntos::Sort()
 {
     bool salir = false;
@@ -71,6 +104,12 @@ int clsPuntos::Sort()
         }
     }
 }
+//=============================================================================
+// METODO    : void mostrarPuntos()
+// ACCION    : Ejecuta Sort() y los registros que dejo los muestra.
+// PARAMETROS: ninguno.
+// DEVUELVE  : nada.
+//-----------------------------------------------------------------------------
 void clsPuntos::mostrarPuntos(clsScreen *screen)
 {
     this->Sort();

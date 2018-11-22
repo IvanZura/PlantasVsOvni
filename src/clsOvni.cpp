@@ -1,5 +1,26 @@
+//#############################################################################
+// ARCHIVO             : clsOvni.cpp
+// AUTOR               : Ivan Alejandro Zura.
+// VERSION             : v. 14.11 estable.
+// FECHA DE CREACION   : 1/11/2018.
+// ULTIMA ACTUALIZACION: 22/11/2018.          .
+// LICENCIA            : GPL (General Public License) - Version 3.
+//=============================================================================
+// SISTEMA OPERATIVO   : Linux / Windows.
+// IDE                 : Code::Blocks.
+// COMPILADOR          : GNU GCC Compiler (Linux) / MinGW (Windows).
+//=============================================================================
+// DESCRIPCION: Esta clase maneja el sprite del ovni y sus funciones
+//
+///////////////////////////////////////////////////////////////////////////////
 #include "clsOvni.h"
 
+//=============================================================================
+// METODO    : clsOvni clsOvni()
+// ACCION    : Inicializa el sprite del ovni
+// PARAMETROS: ninguno.
+// DEVUELVE  : nada.
+//-----------------------------------------------------------------------------
 clsOvni::clsOvni()
 {
     setItems(1);
@@ -8,6 +29,12 @@ clsOvni::clsOvni()
     this->velocidad = 0;
 
 }
+//=============================================================================
+// METODO    : int init(clsScreen*)
+// ACCION    : Inicializa la posicion RANDOM del ovni
+// PARAMETROS: clsScreen*.
+// DEVUELVE  : nada.
+//-----------------------------------------------------------------------------
 int clsOvni::init(clsScreen *s)
 {
     this->initia = 1;
@@ -37,35 +64,34 @@ int clsOvni::init(clsScreen *s)
     }
     paste(s->getPtr());
 }
-
-void clsOvni::setVelocidad(int vel)
-{
-    if(vel < 10 && vel >= 0) this->velocidad = vel;
-
-}
-int clsOvni::getVelocidad()
-{
-    return this->velocidad;
-}
-void clsOvni::avanzar(clsScreen *screen)
-{
-    setX(getX()+getVelocidad());
-    if(getX()>screen->getWidth())
-    {
-        setX(0-getWidth());
-    }
-    paste(screen->getPtr());
-}
+//=============================================================================
+// METODO    : int getInitia()
+// ACCION    : Devuelve el estado de inicializacion del sprite
+// PARAMETROS: ninguno.
+// DEVUELVE  : int.
+//-----------------------------------------------------------------------------
 int clsOvni::getInitia()
 {
     return this->initia;
 }
+//=============================================================================
+// METODO    : int getInitia(int, clsScreen*)
+// ACCION    : Establece el estado de inicializacion del sprite
+// PARAMETROS: int, clsScreen*.
+// DEVUELVE  : nada.
+//-----------------------------------------------------------------------------
 void clsOvni::setInitia(int num, clsScreen *s)
 {
     this->initia = 0;
     setX(1524);
     paste(s->getPtr());
 }
+//=============================================================================
+// METODO    : bool toco(clsSprite*)
+// ACCION    : Devuelve true si el sprite que se paso toca con el sprite ovni
+// PARAMETROS: clsSprite*.
+// DEVUELVE  : bool.
+//-----------------------------------------------------------------------------
 bool clsOvni::toco(clsSprite *spr)
 {
     return this->getContact(spr);

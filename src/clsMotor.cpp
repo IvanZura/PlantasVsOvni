@@ -1,5 +1,26 @@
+//#############################################################################
+// ARCHIVO             : clsMotor.cpp
+// AUTOR               : Ivan Alejandro Zura.
+// VERSION             : v. 14.11 estable.
+// FECHA DE CREACION   : 1/11/2018.
+// ULTIMA ACTUALIZACION: 22/11/2018.          .
+// LICENCIA            : GPL (General Public License) - Version 3.
+//=============================================================================
+// SISTEMA OPERATIVO   : Linux / Windows.
+// IDE                 : Code::Blocks.
+// COMPILADOR          : GNU GCC Compiler (Linux) / MinGW (Windows).
+//=============================================================================
+// DESCRIPCION: Esta clase maneja todo el juego
+//
+///////////////////////////////////////////////////////////////////////////////
 #include "clsMotor.h"
 
+//=============================================================================
+// METODO    : int strLen(char*)
+// ACCION    : Devuelve la cantidad de caracteres que tiene una palabra que se le pase
+// PARAMETROS: char*.
+// DEVUELVE  : int.
+//-----------------------------------------------------------------------------
 int clsMotor::strLen (char *palabra)
 {
     int i=0;
@@ -9,6 +30,12 @@ int clsMotor::strLen (char *palabra)
     }
     return i;
 }
+//=============================================================================
+// METODO    : int strToInt(char*)
+// ACCION    : Devuelve en numero entero la cadena que se le pase
+// PARAMETROS: char*.
+// DEVUELVE  : int.
+//-----------------------------------------------------------------------------
 int clsMotor::strToInt(char *cadena)
 {
     int x=1;
@@ -21,6 +48,12 @@ int clsMotor::strToInt(char *cadena)
     }
     return resultado;
 }
+//=============================================================================
+// METODO    : int init()
+// ACCION    : Inicializa todo lo necesario para lanzar el juego
+// PARAMETROS: ninguno.
+// DEVUELVE  : int.
+//-----------------------------------------------------------------------------
 int clsMotor::init()
 {
 
@@ -53,6 +86,12 @@ int clsMotor::init()
 
     return error.get();
 }
+//=============================================================================
+// METODO    : int mostrarPuntos()
+// ACCION    : Muestra todos los puntajes del archivo de puntos
+// PARAMETROS: ninguno.
+// DEVUELVE  : int.
+//-----------------------------------------------------------------------------
 int clsMotor::mostrarPuntos()
 {
     error.set(0);
@@ -62,6 +101,12 @@ int clsMotor::mostrarPuntos()
     timer.waitForKey(KEY_ENTER);
     return error.get();
 }
+//=============================================================================
+// METODO    : int PerdistePapu()
+// ACCION    : Muesta el cartel para poner el nombre cuando perdes
+// PARAMETROS: ninguno.
+// DEVUELVE  : int.
+//-----------------------------------------------------------------------------
 int clsMotor::PerdistePapu()
 {
     error.set(0);
@@ -126,6 +171,12 @@ int clsMotor::PerdistePapu()
     //error.set(puntos.setPuntos(this->nombre, this->puntaje));
     return error.get();
 }
+//=============================================================================
+// METODO    : int run()
+// ACCION    : Este realiza toda la "magia" del juego. lleva a cabo el juego.
+// PARAMETROS: ninguno.
+// DEVUELVE  : int.
+//-----------------------------------------------------------------------------
 int clsMotor::run()
 {
     this->dificultad = 3;
@@ -310,11 +361,42 @@ int clsMotor::run()
             {
                 if(event.getKey() == KEY_p)
                 {
+                    PausaText.loadFont("FONTS/snap.TTF", 50);
                     PausaText.centredWrite("PAUSA", 250, screen.getPtr());
                     screen.refresh();
                     timer.waitForKey(KEY_p);
                     PausaText.write("PAUSA", -512, -350, screen.getPtr());
                     screen.refresh();
+                }
+                if(event.getKey() == KEY_ESCAPE)
+                {
+                    PausaText.loadFont("FONTS/snap.TTF", 20);
+                    PausaText.centredWrite("¿Realmente desea salir? ENTER para salir o ESC para continuar", 200, screen.getPtr());
+                    screen.refresh();
+                    bool salirESC = false;
+                    while(!salirESC)
+                    {
+                       if(event.wasEvent())
+                        {
+                            if(event.getEventType() == KEY_PRESSED)
+                            {
+                                if(event.getKey() == KEY_ENTER)
+                                {
+                                    salir = true;
+                                    salirESC = true;
+                                    PausaText.write("PAUSA", -512, -350, screen.getPtr());
+                                    screen.refresh();
+                                }
+                                if(event.getKey() == KEY_ESCAPE)
+                                {
+                                    salirESC = true;
+                                    PausaText.write("PAUSA", -512, -350, screen.getPtr());
+                                    screen.refresh();
+                                }
+                            }
+                        }
+                    }
+
                 }
                 error.set(keyCommand(&salir, event.getKey(), &timer));
                 if(error.get()) return error.get();
@@ -390,16 +472,17 @@ int clsMotor::run()
     log.close();
     return error.get();
 }
-
+//=============================================================================
+// METODO    : int keyCommand(bool*, Uint16, ClsTimer*)
+// ACCION    : Maneja las teclas del juego
+// PARAMETROS: bool*, Uint16, ClsTimer*.
+// DEVUELVE  : int.
+//-----------------------------------------------------------------------------
 int clsMotor::keyCommand(bool*salir, Uint16 key, clsTimer *timer)
 {
     error.set(0);
     switch(key)
     {
-        case KEY_ESCAPE:
-        {
-            *salir = true;
-        }break;
         case KEY_ENTER:
         {
             //timer->wait();
@@ -414,6 +497,12 @@ int clsMotor::keyCommand(bool*salir, Uint16 key, clsTimer *timer)
 
     return error.get();
 }
+//=============================================================================
+// METODO    : int menu()
+// ACCION    : Maneja el menu principal del juego.
+// PARAMETROS: ninguno.
+// DEVUELVE  : int.
+//-----------------------------------------------------------------------------
 int clsMotor::menu()
 {
     for(int m = 0; m < 4; m++)
